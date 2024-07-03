@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 /* TODO: consider creating <Button> and <GradientText> components */
 a,
 .btn {
@@ -7,6 +9,60 @@ a,
 }
 
 .gradient-text {
+  @apply text-rose-600 dark:text-rose-400
+  /* @apply bg-clip-text text-transparent; */
+  /* @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500; */
+}
+
+.tagline-text {
   @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+  @apply bg-gradient-to-br from-slate-100 via-slate-500 to-slate-600;
+  font-family: 'Data 70';
+}
+
+.bg-dark-grad {
+  @apply bg-gradient-to-b from-blue-950 via-lime-400 to-teal-600;
+}
+
+@font-face {
+  font-family: 'Compstyle-Regular';
+  src:url('/fonts/Compstyle-Regular.ttf.woff') format('woff'),
+      url('/fonts/Compstyle-Regular.ttf.svg#Compstyle-Regular') format('svg'),
+      url('/fonts/Compstyle-Regular.ttf.eot'),
+      url('/fonts/Compstyle-Regular.ttf.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Novarese Book';
+  src:url('/fonts/NovareseStd-Book.woff') format('woff'),
+      url('/fonts/NovareseStd-Book.woff2') format('woff2'),
+      url('/fonts/NovareseStd-Book.ttf') format('ttf'),
+      url('/fonts/NovareseStd-Book.eot'),
+      url('/fonts/NovareseStd-Book.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Data 70';
+  src:url('/fonts/Data70.woff') format('woff'),
+      url('/fonts/Data70.woff2') format('woff2'),
+      url('/fonts/Data70.ttf') format('ttf'),
+      url('/fonts/Data70.eot'),
+      url('/fonts/Data70.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Univers';
+  src:url('/fonts/UniversBold.woff') format('woff'),
+      url('/fonts/UniversBold.woff2') format('woff2'),
+      url('/fonts/UniversBold.ttf') format('ttf'),
+      url('/fonts/UniversBold.eot'),
+      url('/fonts/UniversBold.eot?#iefix') format('embedded-opentype'); 
+  font-weight: bold;
+  font-style: normal;
 }

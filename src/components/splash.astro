@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import astronautImage from "~/assets/astronaut.png";
+import flyingCarImage from "~/assets/flying car.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
@@ -10,24 +11,16 @@ const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
-<section class="relative h-full bg-black">
+<section class="relative h-full bg-sky-950">
   <Starfield />
-  <GitHubCorner />
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>
   <div class="relative grid h-full place-items-center sm:grid-cols-2">
     <h2
-      class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
+      class="text-white flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
-      <Icon name="logomark" class="size-20 text-white md:size-32" />
-      <div
-        class="gradient-text text-center font-extrabold tracking-tighter text-6xl md:text-8xl"
-      >
-        Build fast
-        <br /> websites,
-        <br /> faster.
-      </div>
+    <slot name="content" />
     </h2>
     <div
       id="astronaut"
@@ -35,11 +28,11 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     >
       <Image
         class="h-full w-full object-cover"
-        src={astronautImage}
+        src={flyingCarImage}
         widths={widths}
         sizes={sizes}
         loading="eager"
-        alt="A floating astronaut in a space suit"
+        alt="A retro-futuristic flying car by "
       />
     </div>
   </div>

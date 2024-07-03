@@ -1,11 +1,12 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}"],
+  content: ["./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue,mdx}"],
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
+        sans: ["Univers", ...defaultTheme.fontFamily.sans],
+        serif: ["Novarese Book", ...defaultTheme.fontFamily.serif],
       },
       colors: {
         primary: "var(--color-primary)",
@@ -27,5 +28,22 @@ module.exports = {
   corePlugins: {
     fontSize: false,
   },
-  plugins: [require("tailwindcss-fluid-type")],
+  plugins: [require("tailwindcss-fluid-type")({
+    values: {
+      xs: [-2, 1.6],
+      sm: [-1, 1.6],
+      base: [0, 1.6],
+      lg: [1, 1.6],
+      xl: [2, 1.2],
+      "2xl": [3, 1.2],
+      "3xl": [4, 1.2],
+      "4xl": [5, 1.1],
+      "5xl": [6, 1.1],
+      "6xl": [7, 1.1],
+      "7xl": [8, 1],
+      "8xl": [9, 1],
+      "9xl": [10, 1],
+      title: [12, 1],
+    },
+  })],
 };
