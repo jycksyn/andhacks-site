@@ -11,9 +11,15 @@ dependencies:
   '@fontsource-variable/inter':
     specifier: ^5.0.17
     version: 5.0.18
+  github-slugger:
+    specifier: ^2.0.0
+    version: 2.0.0
   micromodal:
     specifier: ^0.4.10
     version: 0.4.10
+  nanostores:
+    specifier: ^0.10.3
+    version: 0.10.3
   sharp:
     specifier: ^0.33.3
     version: 0.33.4
@@ -3002,6 +3008,11 @@ packages:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+
+  /nanostores@0.10.3:
+    resolution: {integrity: sha512-Nii8O1XqmawqSCf9o2aWqVxhKRN01+iue9/VEd1TiJCr9VT5XxgPFbF1Edl1XN6pwJcZRsl8Ki+z01yb/T/C2g==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    dev: false
 
   /nlcst-to-string@4.0.0:
     resolution: {integrity: sha512-YKLBCcUYKAg0FNlOBT6aI91qFmSiFKiluk655WzPF+DDMA02qIyy8uiRqI8QXtcFpEvll12LpL5MXqEmAZ+dcA==}

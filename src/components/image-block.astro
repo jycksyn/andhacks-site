@@ -1,0 +1,29 @@
+---
+import {Image} from "astro:assets";
+
+export interface Props {
+    imageSide?: 'left' | 'right';
+    src: ImageMetadata;
+    alt: string;
+}
+
+const {imageSide, src, alt} = Astro.props;
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 max-w-6xl">
+    <div class:list={[imageSide == 'right' && 'sm:order-last']}>
+    <Image
+        class="h-full w-full bg-cover object-cover transition-all duration-300 group-hover:scale-110 group-hover:opacity-20 group-focus:scale-110 group-focus:opacity-20"
+        {src}
+        {alt}
+    />
+    </div>
+    <div class="py-6 sm:px-10 flex flex-col gap-4 justify-center items-center">
+        <div class="max-w-xl text-center font-extrabold text-2xl [&_strong]:text-primary">
+            <slot name="lead" />
+        </div>
+        <span class="text-justify text-offset text-md font-serif [&_a]:underline [&_a]:decoration-secondary">
+          <slot/>
+        </span>
+    </div>
+</div>

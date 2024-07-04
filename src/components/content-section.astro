@@ -2,25 +2,27 @@
 export interface Props {
   id: string;
   title: string;
+  className?: string | string[];
 }
 
-const { title, id } = Astro.props;
+const { title, id, className } = Astro.props;
+const {slots} = Astro;
 ---
 
 <section
   id={id}
-  class="flex scroll-mt-24 flex-col items-center gap-12"
+  class:list={["flex scroll-mt-24 flex-col items-center gap-12 py-12 px-8 sm:first:pt-32", className]}
 >
-  <div class="flex flex-col items-center gap-4">
+  {(title || slots.has('eyebrow')) && <div class="flex flex-col items-center gap-4">
     <slot name="eyebrow" />
     <h2
       class="gradient-text text-center font-extrabold tracking-tight text-6xl"
     >
       {title}
     </h2>
-  </div>
-  <p class="max-w-xl text-center font-extrabold text-2xl">
+  </div>}
+  {slots.has('lead') && <div class="max-w-xl text-center font-extrabold text-2xl [&_strong]:text-primary">
     <slot name="lead" />
-  </p>
+  </div>}
   <slot />
 </section>

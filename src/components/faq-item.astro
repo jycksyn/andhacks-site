@@ -1,0 +1,27 @@
+---
+import { Icon } from 'astro-icon/components';
+import { $slugger } from '~/lib/store.ts'
+
+export interface Props {
+    icon: string;
+    title: string;
+    description: string;
+}
+
+const { icon, title, description } = Astro.props;
+const slug = $slugger.get().slug(title);
+---
+
+
+<li class="border border-default bg-offset p-6 group md:pointer-events-none">
+  <label for={slug} class="h-full w-full flex flex-col items-center gap-4">
+    <input type="checkbox" id={slug} class="hidden" />
+    <div class="group-hover:text-secondary size-16 rounded-full border-2 border-current p-3">
+      <Icon name={icon} class="size-full [transform:rotate(0deg)] group-has-[:checked]:[transform:rotate(360deg)] transition-transform md:transition-none duration-500" />
+    </div>
+    <p class="text-center font-extrabold text-xl">{title}</p>
+    <div class="grid [grid-template-rows:0fr] md:[grid-template-rows:1fr] group-has-[:checked]:[grid-template-rows:1fr] transition-all text-justify text-offset text-md font-serif [&_a]:underline [&_a]:decoration-secondary *:overflow-hidden">
+      <slot/>
+    </div>
+  </label>
+</li>

@@ -7,5 +7,8 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   site: "https://astro-moon-landing.netlify.app/",
-  integrations: [tailwind(), icon(), mdx()]
+  integrations: [tailwind(), icon(), mdx()],
+  image: {
+    domains: ["i.imgur.com"]
+  }
 });

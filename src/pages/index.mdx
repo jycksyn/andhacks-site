@@ -1,20 +1,27 @@
 import "@fontsource-variable/inter";
 import Compatibility from "~/components/compatibility.astro";
-import Features from "~/components/features.astro";
+import Faqs from "~/components/faqs.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
 import Intro from "~/components/intro.astro";
 import Showcase from "~/components/showcase.astro";
 import Splash from "~/components/splash.astro";
 import Button from "~/components/button.astro";
+import Buttons from "~/components/buttons.astro";
 import HeadContent from "~/components/head-content.astro";
+import FaqItem from "~/components/faq-item.astro";
+import ImageBlock from "~/components/image-block.astro";
+import ContentSection from "~/components/content-section.astro";
 import "~/styles/index.css";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import PetCatImage from "~/assets/petcat.jpeg";
 
 
 <html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <HeadContent />
   <body
-    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-gray-900"
   >
     <Header />
     <Splash>
@@ -25,15 +32,96 @@ import "~/styles/index.css";
           &hacks
         </div>
         <div
-          class="opacity-60 border-y-[1px] text-amber-100 px-4 md:text-lg text-sm -mt-2 md:-mt-6 mb-6 font-serif">
-          The 10th Anniversary at William & Mary
+          class="opacity-60 border-y-[1px] text-amber-100 px-4 md:text-lg text-sm -mt-2 md:-mt-6 font-serif">
+          The tenth hackathon at William & Mary
         </div>
-        <Button>PRE-REGISTER</Button>
+        <div class="text-lg text-amber-200">OCTOBER 4TH-6TH</div>
+        <Button large>PRE-REGISTER</Button>
       </Fragment>
     </Splash>
-    <div class="space-y-24 px-8 py-32">
-      <Intro />
-      <Features />
+    <div>
+      <ContentSection title="Introducing &hacks" id="introducing">
+        <div slot="eyebrow" class="flex flex-row gap-2 items-center justify-center">
+          TRIBEHACKS
+          <Icon name="mdi:arrow-forward" />
+          CYPHER
+          <Icon name="mdi:arrow-forward" />
+          <span class="text-primary">&HACKS</span>
+        </div>
+        <Fragment slot="lead">
+          We've gone by many names, but we're still ready to welcome you to learn, explore, create,
+          
+          **and hack**.
+        </Fragment>
+        <Buttons>
+          <Button>
+            <Icon slot="icon" name="mdi:telescope" />
+            Pre-register
+          </Button>
+          <Button>
+            <Icon slot="icon" name="mdi:rocket" />
+            Sponsor Us
+          </Button>
+        </Buttons>
+      </ContentSection>
+
+      <ContentSection>
+        <ImageBlock
+          alt="Five people smiling and petting a stuffed robot cat"
+          src={PetCatImage}>
+          <p slot="lead">She's an artist **and hacks**</p>
+
+          &ha**X** will take place in-person on October 4-6, 2024. The hackathon's location is TBD, but we will update you as soon as we know. We will have free food, free merch, and industry professionals to connect with.
+        </ImageBlock>
+        <ImageBlock
+          imageSide="right"
+          alt="Five people smiling and petting a stuffed robot cat"
+          src={PetCatImage}>
+          <p slot="lead">She's an artist **and hacks**</p>
+
+          &ha**X** will take place in-person on October 4-6, 2024. The hackathon's location is TBD, but we will update you as soon as we know. We will have free food, free merch, and industry professionals to connect with.
+        </ImageBlock>
+      </ContentSection>
+
+      <ContentSection title="&faqs" id="faqs">
+        <Fragment slot="lead">
+          **Don't miss out** on the important info to join us on campus this October.
+        </Fragment>
+        <Faqs>
+          <FaqItem
+            title="What is a hackathon?"
+            icon="mdi:settings">
+            A hackathon is a free, weekend-long tech event where students learn new skills, build interesting projects, and have fun! We will have free merch, free food, and industry professionals to connect with!
+          </FaqItem>
+          <FaqItem
+            title="Do I need a team or coding experience?"
+            icon="mdi:people">
+            &hacks has something for everyone! Whether you've been coding for years or have never written a line, we have workshops, mentors, and resources to help you learn and build something amazing. You can come with a team, find one at the event, or fly solo. Up to 4 people can work together on a project!
+          </FaqItem>
+          <FaqItem
+            title="When can I get started on my project?"
+            icon="mdi:code">
+            Once our final schedule goes live, we'll have a hacking kick-off time where you can start working! If you're bringing an existing project to &hacks, you'll just need to be transparent about what work was done during the event. If you'd like to keep developing your project after &hacks, campus partners will be available to provide resources for after &hacks- more details to come!
+          </FaqItem>
+          <FaqItem
+            title="What if I don't submit a project?"
+            icon="mdi:search">
+            You don't have to submit a project to participate! &hacks is all about learning and having fun while doing so. You can come just for our interesting workshops and talks, to hang out with your friends, or to compete!
+          </FaqItem>
+          <FaqItem
+            title="Can I attend &hacks?"
+            icon="mdi:palette">
+            Just about anyone can attend, though only current undergraduate, graduate, and high school students can submit projects for judging! Whether your major is tech-related or not, we invite you to join us, **some of the best projects have been from non-STEM students!** We are unable to chaperone minors, so please plan accordingly and attend at your own risk.
+          </FaqItem>
+          <FaqItem
+            title="What if I have more questions?"
+            icon="mdi:help">
+            If your question is less frequently asked, don't hesitate to reach out to us! **You can email our parent organization, W&M's chapter of ACM, at [computing@wm.edu](mailto:computing@wm.edu).**
+          </FaqItem>
+        </Faqs>
+      </ContentSection>
+
+
       <Compatibility />
       <Showcase />
     </div>
