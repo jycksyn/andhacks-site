@@ -3,6 +3,7 @@ import Compatibility from "~/components/compatibility.astro";
 import Faqs from "~/components/faqs.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
+import NavItem from "~/components/nav-item.astro";
 import Intro from "~/components/intro.astro";
 import Showcase from "~/components/showcase.astro";
 import Splash from "~/components/splash.astro";
@@ -16,6 +17,8 @@ import "~/styles/index.css";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import PetCatImage from "~/assets/petcat.jpeg";
+import YourPrototypeImage from "~/assets/your-prototype.jpg";
+import StackImage from "~/assets/stack.JPG";
 
 
 <html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
@@ -23,7 +26,11 @@ import PetCatImage from "~/assets/petcat.jpeg";
   <body
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-gray-900"
   >
-    <Header />
+    <Header>
+      <NavItem url="#faqs">For Sponsors</NavItem>
+      <NavItem url="#introducing">Intro</NavItem>
+      <NavItem url="#faqs">&faqs</NavItem>
+    </Header>
     <Splash>
       <Fragment slot="content">
         <div
@@ -71,21 +78,29 @@ import PetCatImage from "~/assets/petcat.jpeg";
           src={PetCatImage}>
           <p slot="lead">She's an artist **and hacks**</p>
 
-          &ha**X** will take place in-person on October 4-6, 2024. The hackathon's location is TBD, but we will update you as soon as we know. We will have free food, free merch, and industry professionals to connect with.
+          &ha**X** will take place in-person on October 4-6, 2024. The hackathon's location is TBD, but we will update you as soon as we know. Come to use technology to make something great!
         </ImageBlock>
         <ImageBlock
           imageSide="right"
-          alt="Five people smiling and petting a stuffed robot cat"
-          src={PetCatImage}>
-          <p slot="lead">She's an artist **and hacks**</p>
+          alt="A person leaning to the side, holding up two fingers in a peace sign. They are standing in front of a whiteboard that says 'Your Prototype'"
+          src={YourPrototypeImage}>
+          <p slot="lead">He plans, designs, **and hacks**</p>
 
-          &ha**X** will take place in-person on October 4-6, 2024. The hackathon's location is TBD, but we will update you as soon as we know. We will have free food, free merch, and industry professionals to connect with.
+          *&hacks is for everyone!* William & Mary's liberal arts model makes this event so exciting. This is an opportunity to use technology to enhance the things you're already interested and skilled in. Whether you've pioneered new machine learning techniques or you've never written a line of code in your life, we've got you covered. 
+        </ImageBlock>
+        <ImageBlock
+          imageSide="left"
+          alt="A person leaning to the side, holding up two fingers in a peace sign. They are standing in front of a whiteboard that says 'Your Prototype'"
+          src={StackImage}>
+          <p slot="lead">He stacks, snacks, **and hacks**</p>
+
+          If a lack of space, time, or snacks has kept you away from working on your dream project, **&hacks is the place to get it done!** Spend the weekend with us building cool stuff, attending fun workshops, and making connections!
         </ImageBlock>
       </ContentSection>
 
       <ContentSection title="&faqs" id="faqs">
         <Fragment slot="lead">
-          **Don't miss out** on the important info to join us on campus this October.
+          Get a h**and**le on the important info to join us on campus this October!
         </Fragment>
         <Faqs>
           <FaqItem
@@ -120,10 +135,21 @@ import PetCatImage from "~/assets/petcat.jpeg";
           </FaqItem>
         </Faqs>
       </ContentSection>
-
-
-      <Compatibility />
-      <Showcase />
+      <ContentSection className="bg-gradient-to-b to-blue-800 from-blue-950 text-white [&_.gradient-text]:text-white" title="Convinced?" id="convinced">
+        <span slot="lead" class='text-xl'>
+          Pre-register for exclusive sponsor benefits and to be the first to know when registration opens!
+        </span>
+        <Buttons>
+          <Button>
+            <Icon slot="icon" name="mdi:telescope" />
+            Pre-register
+          </Button>
+          <Button>
+            <Icon slot="icon" name="mdi:rocket" />
+            Sponsor Us
+          </Button>
+        </Buttons>
+      </ContentSection>
     </div>
     <Footer />
   </body>
