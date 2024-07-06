@@ -5,9 +5,11 @@ export interface Props {
     imageSide?: 'left' | 'right';
     src: ImageMetadata;
     alt: string;
+    raw?: boolean;
 }
 
-const {imageSide, src, alt} = Astro.props;
+const {imageSide, src, alt, raw} = Astro.props;
+const slots = Astro.slots;
 ---
 
 <div class="grid grid-cols-1 sm:grid-cols-2 max-w-6xl">
@@ -19,11 +21,13 @@ const {imageSide, src, alt} = Astro.props;
     />
     </div>
     <div class="py-6 sm:px-10 flex flex-col gap-4 justify-center items-center">
-        <div class="max-w-xl text-center font-extrabold text-2xl [&_strong]:text-primary">
+        {slots.has("lead") && <div class="max-w-xl text-center font-extrabold text-2xl [&_strong]:text-primary">
             <slot name="lead" />
-        </div>
-        <span class="text-justify text-offset text-md font-serif [&_a]:underline [&_a]:decoration-secondary">
-          <slot/>
-        </span>
+        </div>}
+        {raw ? <slot /> : (
+            <span class="text-justify text-offset text-md font-serif [&_a]:underline [&_a]:decoration-secondary">
+                <slot/>
+            </span>
+        )}
     </div>
 </div>

@@ -1,0 +1,25 @@
+---
+export interface Props {
+    headerClassName?: string | string[];
+    className?: string | string[];
+}
+
+const { headerClassName, className } = Astro.props;
+---
+
+<div class:list={[
+    'font-serif border-2 border-default border-opacity-30 flex-1 [&_ul]:list-disc [&_ul]:pl-6',
+    className
+]}>
+    <div class:list={["p-6 pb-4", headerClassName]}>
+        <div class="text-5xl font-sans">
+            <slot name="amount" />
+        </div>
+        <div class="text-xl font-sans">
+            <slot name="name" />
+        </div>
+    </div>
+    <div class="p-4 text-wrap">
+        <slot />
+    </div>
+</div>

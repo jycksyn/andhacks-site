@@ -66,3 +66,7 @@ a,
   font-weight: bold;
   font-style: normal;
 }
+
+a:not(.flex):not(.navlink) {
+  @apply underline decoration-secondary;
+}

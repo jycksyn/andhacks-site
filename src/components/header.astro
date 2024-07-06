@@ -1,15 +1,26 @@
 ---
 import { Icon } from "astro-icon/components";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
-import type { NavItem } from "~/types";
+
+export interface Props {
+  title: string;
+  fixed: boolean;
+  className: string | string[];
+}
+
+const { title, fixed, className } = Astro.props;
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class:list={[
+    "absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white",
+    fixed && "sticky top-0",
+    className
+    ]}
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
-    <h1 class="sr-only">Astro</h1>
+    <h1 class="sr-only">{title}</h1>
     <Icon name="logomark" class="size-10 text-secondary sm:hidden" />
     <Icon name="wordmark" class="hidden h-10 sm:block" />
   </a>
@@ -85,7 +96,9 @@ import type { NavItem } from "~/types";
   openNavButton.addEventListener("click", openMenu);
   closeNavButton.addEventListener("click", closeMenu);
 
-  document.addEventListener("scroll", () => {
+  const { fixed } = Astro.props;
+
+  (!fixed) && document.addEventListener("scroll", () => {
    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
    header.classList.toggle("fixed-header", d < 0);
   });

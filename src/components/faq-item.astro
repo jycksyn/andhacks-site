@@ -20,7 +20,7 @@ const slug = $slugger.get().slug(title);
       <Icon name={icon} class="size-full [transform:rotate(0deg)] group-has-[:checked]:[transform:rotate(360deg)] transition-transform md:transition-none duration-500" />
     </div>
     <p class="text-center font-extrabold text-xl">{title}</p>
-    <div class="grid [grid-template-rows:0fr] md:[grid-template-rows:1fr] group-has-[:checked]:[grid-template-rows:1fr] transition-all text-justify text-offset text-md font-serif [&_a]:underline [&_a]:decoration-secondary *:overflow-hidden">
+    <div class="grid [grid-template-rows:0fr] md:[grid-template-rows:1fr] group-has-[:checked]:[grid-template-rows:1fr] transition-all text-justify text-offset text-md font-serif  *:overflow-hidden">
       <slot/>
     </div>
   </label>

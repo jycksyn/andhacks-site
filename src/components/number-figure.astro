@@ -1,0 +1,14 @@
+---
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<li>
+    <p class="text-center font-extrabold text-6xl">{title}</p>
+    <div class="text-lg font-bold grid [grid-template-rows:0fr] md:[grid-template-rows:1fr] text-center text-offset text-md font-serif">
+    <slot/>
+    </div>
+</li>
