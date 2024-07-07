@@ -12,10 +12,10 @@ const { headerClassName, className } = Astro.props;
     className
 ]}>
     <div class:list={["p-6 pb-4", headerClassName]}>
-        <div class="text-5xl font-sans">
+        <div class="text-6xl font-sans font-bold">
             <slot name="amount" />
         </div>
-        <div class="text-xl font-sans">
+        <div class="text-xl font-sans font-bold">
             <slot name="name" />
         </div>
     </div>

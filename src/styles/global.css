@@ -24,6 +24,10 @@ a,
   @apply bg-gradient-to-b from-blue-950 via-lime-400 to-teal-600;
 }
 
+a:not(.flex):not(.navlink) {
+  @apply underline decoration-secondary;
+}
+
 @font-face {
   font-family: 'Compstyle-Regular';
   src:url('/fonts/Compstyle-Regular.ttf.woff') format('woff'),
@@ -67,6 +71,46 @@ a,
   font-style: normal;
 }
 
-a:not(.flex):not(.navlink) {
-  @apply underline decoration-secondary;
+@font-face {
+  font-family: 'Univers';
+  src:url('/fonts/UniversRegular.woff') format('woff'),
+      url('/fonts/UniversRegular.svg') format('svg'),
+      url('/fonts/UniversRegular.ttf') format('ttf'),
+      url('/fonts/UniversRegular.eot'),
+      url('/fonts/UUniversRegularniversReg.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Univers';
+  src:url('/fonts/UniversLight.woff') format('woff'),
+      url('/fonts/UniversLight.svg') format('svg'),
+      url('/fonts/UniversLight.ttf') format('ttf'),
+      url('/fonts/UniversLight.eot'),
+      url('/fonts/UniversLight.eot?#iefix') format('embedded-opentype'); 
+  font-weight: light;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Univers Condensed';
+  src:url('/fonts/UniversCnRg.woff') format('woff'),
+      url('/fonts/UniversCnRg.svg') format('svg'),
+      url('/fonts/UniversCnRg.ttf') format('ttf'),
+      url('/fonts/UniversCnRg.eot'),
+      url('/fonts/UniversCnRg.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Univers Condensed';
+  src:url('/fonts/UniversCnBold.woff') format('woff'),
+      url('/fonts/UniversCnBold.svg') format('svg'),
+      url('/fonts/UniversCnBold.ttf') format('ttf'),
+      url('/fonts/UniversCnBold.eot'),
+      url('/fonts/UniversCnBold.eot?#iefix') format('embedded-opentype'); 
+  font-weight: bold;
+  font-style: normal;
 }

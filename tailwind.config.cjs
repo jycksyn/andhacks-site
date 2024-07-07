@@ -7,6 +7,7 @@ module.exports = {
       fontFamily: {
         sans: ["Univers", ...defaultTheme.fontFamily.sans],
         serif: ["Novarese Book", ...defaultTheme.fontFamily.serif],
+        condensed: ["Univers Condensed", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: "var(--color-primary)",

@@ -1,6 +1,6 @@
 ---
 const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
+const image = new URL("social.png", site);
 const title = "&hacks 10";
 const description =
   "";
@@ -26,5 +26,5 @@ const description =
     <meta name="twitter:card" content="summary_large_image" />
 
     {/* initialize theme */}
-    <script is:inline src="~/lib/initialize-theme.js"></script>
+    <script src="~/lib/initialize-theme.js"></script>
   </head>

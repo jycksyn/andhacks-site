@@ -27,9 +27,9 @@ import StackImage from "~/assets/stack.JPG";
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-gray-900"
   >
     <Header>
-      <NavItem url="#faqs">For Sponsors</NavItem>
-      <NavItem url="#introducing">Intro</NavItem>
-      <NavItem url="#faqs">&faqs</NavItem>
+      <NavItem url="https://forms.gle/o7vz4gY5231sBgFa7">Pre-Register</NavItem>
+      <NavItem url="/sponsor">For Sponsors</NavItem>
+      <NavItem url="#faqs">FAQ</NavItem>
     </Header>
     <Splash>
       <Fragment slot="content">
@@ -42,13 +42,13 @@ import StackImage from "~/assets/stack.JPG";
           class="opacity-60 border-y-[1px] text-amber-100 px-4 md:text-lg text-sm -mt-2 md:-mt-6 font-serif">
           The tenth hackathon at William & Mary
         </div>
-        <div class="text-lg text-amber-200">OCTOBER 4TH-6TH</div>
-        <Button large>PRE-REGISTER</Button>
+        <div class="text-lg text-amber-200">**OCTOBER 4TH-6TH**</div>
+        <Button large href="https://forms.gle/o7vz4gY5231sBgFa7">PRE-REGISTER</Button>
       </Fragment>
     </Splash>
     <div>
       <ContentSection title="Introducing &hacks" id="introducing">
-        <div slot="eyebrow" class="flex flex-row gap-2 items-center justify-center">
+        <div slot="eyebrow" class="font-bold flex flex-row gap-2 items-center justify-center">
           TRIBEHACKS
           <Icon name="mdi:arrow-forward" />
           CYPHER
@@ -61,11 +61,11 @@ import StackImage from "~/assets/stack.JPG";
           **and hack**.
         </Fragment>
         <Buttons>
-          <Button>
+          <Button href="https://forms.gle/o7vz4gY5231sBgFa7">
             <Icon slot="icon" name="mdi:telescope" />
             Pre-register
           </Button>
-          <Button>
+          <Button href="/sponsor">
             <Icon slot="icon" name="mdi:rocket" />
             Sponsor Us
           </Button>
@@ -136,15 +136,15 @@ import StackImage from "~/assets/stack.JPG";
         </Faqs>
       </ContentSection>
       <ContentSection className="bg-gradient-to-b to-blue-800 from-blue-950 text-white [&_.gradient-text]:text-white" title="Convinced?" id="convinced">
-        <span slot="lead" class='text-xl'>
+        <span slot="lead" class='text-xl font-normal'>
           Pre-register for exclusive sponsor benefits and to be the first to know when registration opens!
         </span>
         <Buttons>
-          <Button>
+          <Button href="https://forms.gle/o7vz4gY5231sBgFa7">
             <Icon slot="icon" name="mdi:telescope" />
             Pre-register
           </Button>
-          <Button>
+          <Button href="/sponsor">
             <Icon slot="icon" name="mdi:rocket" />
             Sponsor Us
           </Button>

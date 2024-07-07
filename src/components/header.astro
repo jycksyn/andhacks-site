@@ -4,7 +4,7 @@ import ThemeSwitcher from "~/components/theme-switcher.astro";
 
 export interface Props {
   title: string;
-  fixed: boolean;
+  fixed?: boolean;
   className: string | string[];
 }
 
@@ -13,9 +13,10 @@ const { title, fixed, className } = Astro.props;
 
 <header
   id="page-header"
+  data-fixed={fixed}
   class:list={[
-    "absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white",
-    fixed && "sticky top-0",
+    "z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white",
+    fixed ? "sticky top-0 bottom-auto" : "absolute bottom-0",
     className
     ]}
 >
@@ -96,8 +97,10 @@ const { title, fixed, className } = Astro.props;
   openNavButton.addEventListener("click", openMenu);
   closeNavButton.addEventListener("click", closeMenu);
 
-  const { fixed } = Astro.props;
+  console.log(header.dataset)
+  const fixed = header.dataset.fixed != undefined;
 
+  console.log(fixed);
   (!fixed) && document.addEventListener("scroll", () => {
    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
    header.classList.toggle("fixed-header", d < 0);
