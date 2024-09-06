@@ -1,5 +1,5 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     // Alias `src` to `~`
     "baseUrl": ".",
@@ -9,6 +9,6 @@
   },
   "mdx": {
     // Enable strict type checking in MDX files.
-    "checkMdx": true
+    "checkMdx": true,
   }
 }

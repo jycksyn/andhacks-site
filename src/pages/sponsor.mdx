@@ -17,9 +17,9 @@ import SponsorCard from "~/components/sponsor-card.astro";
 import "~/styles/index.css";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import AmpersandChallengeImage from "~/assets/ampersand challenge.JPG";
+import AmpersandChallengeImage from "~/assets/ampersand challenge.jpg";
 import YourPrototypeImage from "~/assets/your-prototype.jpg";
-import StackImage from "~/assets/stack.JPG";
+import StackImage from "~/assets/stack.jpg";
 
 
 <html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
@@ -65,6 +65,24 @@ import StackImage from "~/assets/stack.JPG";
       </ContentSection>
       <ContentSection id="tiers">
         <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-4 max-w-[92rem]">
+        <SponsorCard className="md:col-span-2" headerClassName="bg-violet-700 text-white">
+          <Fragment slot="amount">$&&&</Fragment>
+          <Fragment slot="name">Custom</Fragment>
+
+          * [Contact us](mailto:computing@wm.edu) with your organization's needs
+          * Are you a campus organization and able to offer non-monetary support? Ask us about becoming an official campus partner of &hacks!
+
+        </SponsorCard>
+        <SponsorCard className="md:col-span-2" headerClassName="bg-sky-600 text-white">
+          <Fragment slot="amount">$10,000</Fragment>
+          <Fragment slot="name">Diamond Partner</Fragment>
+
+          * Everything in Platinum
+          * Become the official partner of &hacks
+          * Company logo alongside all &hacks branding*
+          * Limited to one company
+
+        </SponsorCard>
         <SponsorCard headerClassName="bg-amber-700 text-white">
           <Fragment slot="amount">$2,000</Fragment>
           <Fragment slot="name">Bronze</Fragment>
@@ -107,24 +125,6 @@ import StackImage from "~/assets/stack.JPG";
           * Everything in Gold
           * XXL logo on our website and t-shirt*
           * Present top prizes
-
-        </SponsorCard>
-        <SponsorCard className="md:col-span-2" headerClassName="bg-sky-600 text-white">
-          <Fragment slot="amount">$10,000</Fragment>
-          <Fragment slot="name">Diamond Partner</Fragment>
-
-          * Everything in Platinum
-          * Become the official partner of &hacks
-          * Company logo alongside all &hacks branding*
-          * Limited to one company
-
-        </SponsorCard>
-        <SponsorCard className="md:col-span-2" headerClassName="bg-violet-700 text-white">
-          <Fragment slot="amount">$&&&</Fragment>
-          <Fragment slot="name">Custom</Fragment>
-
-          * [Contact us](mailto:computing@wm.edu) with your organization's needs
-          * Are you a campus organization and able to offer non-monetary support? Ask us about becoming an official campus partner of &hacks!
 
         </SponsorCard>
         </div>

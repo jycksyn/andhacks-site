@@ -3,9 +3,9 @@ import { Icon } from "astro-icon/components";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 
 export interface Props {
-  title: string;
+  title?: string;
   fixed?: boolean;
-  className: string | string[];
+  className?: string | string[];
 }
 
 const { title, fixed, className } = Astro.props;

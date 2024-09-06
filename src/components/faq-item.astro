@@ -5,10 +5,9 @@ import { $slugger } from '~/lib/store.ts'
 export interface Props {
     icon: string;
     title: string;
-    description: string;
 }
 
-const { icon, title, description } = Astro.props;
+const { icon, title } = Astro.props;
 const slug = $slugger.get().slug(title);
 ---
 
