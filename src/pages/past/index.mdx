@@ -1,0 +1,69 @@
+import "@fontsource-variable/inter";
+import Compatibility from "~/components/compatibility.astro";
+import Faqs from "~/components/faqs.astro";
+import Footer from "~/components/footer.astro";
+import Header from "~/components/header.astro";
+import NavItem from "~/components/nav-item.astro";
+import Intro from "~/components/intro.astro";
+import Showcase from "~/components/showcase.astro";
+import Splash from "~/components/splash.astro";
+import Button from "~/components/button.astro";
+import Buttons from "~/components/buttons.astro";
+import HeadContent from "~/components/head-content.astro";
+import NumberFigure from "~/components/number-figure.astro";
+import ImageBlock from "~/components/image-block.astro";
+import ContentSection from "~/components/content-section.astro";
+import SponsorCard from "~/components/sponsor-card.astro";
+import "~/styles/index.css";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import AmpersandChallengeImage from "~/assets/ampersand challenge.jpg";
+import YourPrototypeImage from "~/assets/your-prototype.jpg";
+import StackImage from "~/assets/stack.jpg";
+
+
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <HeadContent />
+  <body
+    class="bg-default text-default text-base selection:bg-secondary selection:text-gray-900"
+  >
+    <Header fixed className="bg-green-950">
+      <NavItem url="/">For Hackers</NavItem>
+      <NavItem url="/sponsor">For Sponsors</NavItem>
+    </Header>
+    <div>
+      <ContentSection title="Past Websites" className='bg-gradient-to-b to-green-800 from-green-950 text-white [&_.gradient-text]:text-white'>
+        <Fragment slot="lead">
+          Check out the websites from previous years' hackathons!
+        </Fragment>
+        <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4">
+          <Button href="/past/2016/tribehacks" className="hover:border-amber-500">
+            TribeHacks II (2016)
+          </Button>
+          <Button href="/past/2017/tribehacks" className="hover:border-green-500">
+            TribeHacks III (2017)
+          </Button>
+          <Button href="/past/2018/tribehacks" className="hover:border-red-500">
+            TribeHacks IV (2018)
+          </Button>
+          <Button href="/past/2019/cypher" className="hover:border-emerald-500">
+            Cypher V (2019)  
+          </Button>
+          <Button href="/past/2021/cypher" className="hover:border-teal-500">
+            Cypher VI (2021)
+          </Button>
+          <Button href="/past/2022/cypher" className="hover:border-pink-500">
+            Cypher VII (2022)
+          </Button>
+          <Button href="/past/2023/cypher" className="hover:border-amber-500">
+            Cypher VIII (2023)
+          </Button>
+          <Button href="https://andhacks.notion.site/e4978b13074448e1a29ffa040a00924e?v=337f80c8b9ce4dc994ef51f1a9ccba28&pvs=74" className="hover:border-violet-500">
+            TribeHacks IX (Sp. 2024) 
+          </Button>
+        </div>
+      </ContentSection>
+    </div>
+    <Footer />
+  </body>
+</html>

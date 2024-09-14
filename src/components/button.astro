@@ -1,17 +1,18 @@
 ---
 export interface Props {
     large?: boolean,
-    href?: string
+    href?: string,
+    className?: string,
 }
 
-const {large, href} = Astro.props;
+const {large, href, className} = Astro.props;
 ---
 
 <a
 {href}
 class:list={[
     "font-bold flex items-center justify-center gap-3 border-2 border-current px-5 py-3",
-    large &&  "text-xl",
+    large &&  "text-xl", className
     ]}
 >
 <slot name="icon" class="size-8" />
