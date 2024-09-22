@@ -20,7 +20,9 @@ const slug = $slugger.get().slug(title);
     </div>
     <p class="text-center font-extrabold text-xl">{title}</p>
     <div class="grid [grid-template-rows:0fr] md:[grid-template-rows:1fr] group-has-[:checked]:[grid-template-rows:1fr] transition-all text-justify text-offset text-md font-serif  *:overflow-hidden">
-      <slot/>
+      <div>
+        <slot/>
+      </div>
     </div>
   </label>
 </li>
