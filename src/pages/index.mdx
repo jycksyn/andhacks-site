@@ -3,6 +3,7 @@ import Compatibility from "~/components/compatibility.astro";
 import Faqs from "~/components/faqs.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
+import Sponsor from "~/components/sponsor.astro";
 import NavItem from "~/components/nav-item.astro";
 import Intro from "~/components/intro.astro";
 import Showcase from "~/components/showcase.astro";
@@ -19,6 +20,18 @@ import { Icon } from "astro-icon/components";
 import PetCatImage from "~/assets/petcat.jpeg";
 import YourPrototypeImage from "~/assets/your-prototype.jpg";
 import StackImage from "~/assets/stack.jpg";
+import SponsorOnePassword from "~/assets/sponsors/1password.svg";
+import SponsorCareerCenter from "~/assets/sponsors/careercenter.svg";
+import SponsorAfs from "~/assets/sponsors/afs.svg";
+import SponsorApplied from "~/assets/sponsors/applied.svg";
+import SponsorCs from "~/assets/sponsors/cs.svg";
+import SponsorEhub from "~/assets/sponsors/ehub.svg";
+import SponsorGri from "~/assets/sponsors/gri.svg";
+import SponsorGar from "~/assets/sponsors/gar.svg";
+import SponsorIic from "~/assets/sponsors/iic.svg";
+import SponsorJfTaylor from "~/assets/sponsors/jftaylor.svg";
+import SponsorLibraries from "~/assets/sponsors/libraries.svg";
+import SponsorMarathon from "~/assets/sponsors/marathon.svg";
 
 
 <html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
@@ -112,6 +125,25 @@ import StackImage from "~/assets/stack.jpg";
             **Closing Ceremony:** 1 PM
           </FaqItem>
         </Faqs>
+      </ContentSection>
+
+      <ContentSection title="Our Sponsors & Partners">
+        <ul class="grid max-w-4xl grid-cols-1 md:grid-cols-2 gap-8">
+          <Sponsor src={SponsorAfs} alt="AFS" href="https://afs.com/" />
+          <Sponsor src={SponsorApplied} alt="Applied Research Center" href="https://www.wm.edu/sites/arc/" />
+        </ul>
+        <ul class="grid max-w-4xl grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <Sponsor src={SponsorJfTaylor} alt="J.F. Taylor" href="https://www.jfti.com/" />
+          <Sponsor src={SponsorMarathon} alt="Marathon Consulting" href="https://www.marathonus.com/" />
+          <Sponsor src={SponsorLibraries} alt="Libraries" href="https://libraries.wm.edu/" />
+          <Sponsor src={SponsorCareerCenter} alt="Career Center" href="https://tribecareers.wm.edu/" />
+          <Sponsor src={SponsorCs} alt="Computer Science" href="https://www.wm.edu/as/computerscience/" />
+          <Sponsor src={SponsorEhub} alt="eHub" href="https://www.wm.edu/offices/entrepreneurship/" />
+          <Sponsor src={SponsorGri} alt="Global Research Institute" href="https://www.wm.edu/offices/global-research/" />
+          <Sponsor src={SponsorIic} alt="Institute for Integrative Conservation" href="https://www.wm.edu/offices/iic/" />
+          <Sponsor src={SponsorOnePassword} alt="1Password" href="https://1password.com/" />
+          <Sponsor src={SponsorGar} alt="Goliath Automation and Robotics" href="https://automationroboticsarduino.com/" />
+        </ul>
       </ContentSection>
 
       <ContentSection>

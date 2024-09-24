@@ -1,6 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
+  darkMode: ["selector", '[data-theme="dark"]'],
   content: ["./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue,mdx}"],
   theme: {
     extend: {

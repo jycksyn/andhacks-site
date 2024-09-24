@@ -1,0 +1,19 @@
+---
+import Image from "astro/components/Image.astro";
+
+export interface Props {
+    src: ImageMetadata;
+    alt: string;
+    href?: string;
+}
+
+const {src, alt, href} = Astro.props;
+---
+
+<a {href} class="h-full w-full brightness-0 dark:invert transition-all translate-x-0 translate-y-0 hover:-translate-x-0.5 hover:-translate-y-0.5 drop-shadow-[0rem_0rem] hover:drop-shadow-[0.25rem_0.25rem_0.25rem_theme(colors.amber.200_/_75%)]">
+<Image
+    class="h-full w-full bg-contain object-contain"
+    {src}
+    {alt}
+/>
+</a>
